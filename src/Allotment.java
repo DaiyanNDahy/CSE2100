@@ -278,7 +278,10 @@ public class Allotment extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
          String roomnumber=jTextField2.getText();
-        
+        if(roomnumber.equals("")){
+             JOptionPane.showMessageDialog(null,"Please write the room number.");
+        }
+        else {
         try{
             Connection con=ConnectionProvider.getCon();
             Statement st=con.createStatement();
@@ -289,6 +292,7 @@ public class Allotment extends javax.swing.JFrame {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
+        }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -306,6 +310,10 @@ public class Allotment extends javax.swing.JFrame {
             activate="Yes";
         }
         else activate="No";
+        if(RoomNumber.equals("")){
+            JOptionPane.showMessageDialog(null,"Please, write the room number.");
+        }
+        else {
         try{
             Connection con=ConnectionProvider.getCon();
             PreparedStatement ps=con.prepareStatement("insert into room values(?,?,?)");
@@ -320,6 +328,7 @@ public class Allotment extends javax.swing.JFrame {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);
+        }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -372,6 +381,10 @@ public class Allotment extends javax.swing.JFrame {
             activate="Yes";
         }
         else activate="No";
+        if(roomnumber.equals("")){
+            JOptionPane.showMessageDialog(null,"Please write the room number.");
+        }
+        else {
         try{
             Connection con=ConnectionProvider.getCon();
             Statement st=con.createStatement();
@@ -382,6 +395,7 @@ public class Allotment extends javax.swing.JFrame {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
+        }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
